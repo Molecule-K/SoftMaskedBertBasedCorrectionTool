@@ -1,5 +1,14 @@
 from yacs.config import CfgNode as CN
 
+'''
+@article{cai2020pre,
+  title={BERT Based Correction Models},
+  author={Cai, Heng and Chen, Dian},
+  journal={GitHub. Note: https://github.com/gitabtion/BertBasedCorrectionModels},
+  year={2020}
+}
+'''
+
 # -----------------------------------------------------------------------------
 # Convention about Training / Test specific parameters
 # -----------------------------------------------------------------------------
