@@ -27,9 +27,8 @@ class DetectionNetwork(nn.Module):
         )
 
     def forward(self, hidden_states):
-        out, _ = self.gru(hidden_states)
-        prob = self.linear(out)
-        prob = self.sigmoid(prob)
+        output, _ = self.gru(hidden_states)
+        prob = self.sigmoid(self.linear(output))
         return prob
 
 class BertCorrectionModel(torch.nn.Module, ModuleUtilsMixin):
@@ -44,23 +43,15 @@ class BertCorrectionModel(torch.nn.Module, ModuleUtilsMixin):
         self._device = device
 
     def forward(self,texts,prob,embed=None,cor_labels=None,residual_connection=False):
-        if cor_labels is not None:
-            text_labels = self.tokenizer(cor_labels,padding=True,return_tensors='pt')['input_ids']
-            text_labels = text_labels.to(self._device)
-            text_labels[text_labels == 0] = -100
-        else:
-            text_labels = None
-        encoded_texts = self.tokenizer(texts,padding=True,return_tensors='pt')
-        encoded_texts.to(self._device)
+        text_labels = self.tokenizer(cor_labels,padding=True,return_tensors='pt')['input_ids'].to(self._device)
+        text_labels[text_labels == 0] = -100
+        encoded_texts = self.tokenizer(texts,padding=True,return_tensors='pt').to(self._device)
         if embed is None:
             embed = self.embeddings(input_ids=encoded_texts['input_ids'],token_type_ids=encoded_texts['token_type_ids'])
         mask_embed = self.embeddings(torch.ones_like(prob.squeeze(-1)).long()*self.mask_token_id).detach()
         cor_embed = prob * mask_embed + (1 - prob) * embed
 
-        input_shape = encoded_texts['input_ids'].size()
-        device = encoded_texts['input_ids'].device
-
-        extended_attention_mask: torch.Tensor = self.get_extended_attention_mask(encoded_texts['attention_mask'], input_shape, device)
+        extended_attention_mask: torch.Tensor = self.get_extended_attention_mask(encoded_texts['attention_mask'], encoded_texts['input_ids'].size(),encoded_texts['input_ids'].device)
         head_mask = self.get_head_mask(None, self.config.num_hidden_layers)
         encoder_outputs = self.corrector(
             cor_embed,
@@ -71,21 +62,18 @@ class BertCorrectionModel(torch.nn.Module, ModuleUtilsMixin):
             return_dict=False,
         )
         sequence_output = encoder_outputs[0]
-
         sequence_output = sequence_output + embed if residual_connection else sequence_output
         prediction_scores = self.cls(sequence_output)
-        out = (prediction_scores, sequence_output)
+        output = (prediction_scores, sequence_output)
 
-        if text_labels is not None:
-            loss_fct = nn.CrossEntropyLoss()
-            cor_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size),text_labels.view(-1))
-            out = (cor_loss, ) + out
-        return out
+        loss_fct = nn.CrossEntropyLoss()
+        cor_loss = loss_fct(prediction_scores.view(-1, self.config.vocab_size),text_labels.view(-1))
+        output = (cor_loss, ) + output
+        return output
 
     def load_from_transformers_state_dict(self, gen_fp):
         state_dict = OrderedDict()
-        gen_state_dict = tfs.AutoModelForMaskedLM.from_pretrained(
-            gen_fp).state_dict()
+        gen_state_dict = tfs.AutoModelForMaskedLM.from_pretrained(gen_fp).state_dict()
         for k, v in gen_state_dict.items():
             name = k
             if name.startswith('bert'):
@@ -108,7 +96,6 @@ class BaseM(pl.LightningModule):
     def configure_optimizers(self):
         optimizer = make_optimizer(self.cfg, self)
         scheduler = build_lr_scheduler(self.cfg, optimizer)
-
         return [optimizer], [scheduler]
 
     def on_validation_epoch_start(self) -> None:
@@ -120,7 +107,6 @@ class BaseM(pl.LightningModule):
 class TrainModelStep(BaseM):
     def __init__(self, cfg, *args, **kwargs):
         super().__init__(cfg, *args, **kwargs)
-        # loss weight
         self.w = cfg.MODEL.HYPER_PARAMS[0]
 
     def training_step(self, batch):
@@ -200,8 +186,7 @@ class SoftMaskedBertModel(TrainModelStep):
         self._device = cfg.MODEL.DEVICE
 
     def forward(self, texts, cor_labels=None, det_labels=None):
-        encoded_texts = self.tokenizer(texts,padding=True,return_tensors='pt')
-        encoded_texts.to(self._device)
+        encoded_texts = self.tokenizer(texts,padding=True,return_tensors='pt').to(self._device)
         embed = self.corrector.embeddings(input_ids=encoded_texts['input_ids'],token_type_ids=encoded_texts['token_type_ids'])
         prob = self.detector(embed)
         cor_out = self.corrector(texts,prob,embed,cor_labels,residual_connection=True)
