@@ -1,0 +1,839 @@
+2022-05-07 03:50:26,938 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 03:50:26,939 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 03:50:26,939 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 03:50:26,940 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 03:55:25,219 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 03:55:25,222 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 03:55:25,223 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 03:55:25,223 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 03:58:05,156 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 03:58:05,157 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 03:58:05,157 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 03:58:05,158 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 04:05:58,306 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 04:05:58,307 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 04:05:58,308 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 04:05:58,308 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 04:08:02,950 SoftMaskedBertModel INFO: Valid.
+2022-05-07 04:08:03,811 SoftMaskedBertModel INFO: loss: 4.346597909927368
+2022-05-07 04:08:03,811 SoftMaskedBertModel INFO: Detection:
+acc: 0.0000
+2022-05-07 04:08:03,811 SoftMaskedBertModel INFO: Correction:
+acc: 0.0000
+2022-05-07 04:08:03,813 SoftMaskedBertModel INFO: The detection result is precision=0.02714164546225615, recall=0.8421052631578947 and F1=0.05258833196384552
+2022-05-07 04:08:03,813 SoftMaskedBertModel INFO: The correction result is precision=0.0, recall=0.0 and F1=0
+2022-05-07 04:08:03,813 SoftMaskedBertModel INFO: Sentence Level: acc:0.000000, precision:0.000000, recall:0.000000, f1:0.000000
+2022-05-07 06:53:29,811 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 06:53:29,814 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 06:53:29,815 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 06:53:29,815 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 07:03:47,875 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 07:03:47,877 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 07:03:47,878 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 07:03:47,878 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 07:17:52,590 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 07:17:52,593 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 07:17:52,594 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 07:17:52,594 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 07:21:55,945 SoftMaskedBertModel INFO: Namespace(config_file='csc/train_SoftMaskedBert.yml', opts=[])
+2022-05-07 07:21:55,946 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-07 07:21:55,946 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-07 07:21:55,947 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-07 07:23:25,848 SoftMaskedBertModel INFO: Valid.
+2022-05-07 07:23:26,346 SoftMaskedBertModel INFO: loss: 4.462127923965454
+2022-05-07 07:23:26,346 SoftMaskedBertModel INFO: Detection:
+acc: 0.0000
+2022-05-07 07:23:26,347 SoftMaskedBertModel INFO: Correction:
+acc: 0.0000
+2022-05-07 07:23:26,349 SoftMaskedBertModel INFO: The detection result is precision=0.025869037995149554, recall=0.8421052631578947 and F1=0.05019607843137255
+2022-05-07 07:23:26,349 SoftMaskedBertModel INFO: The correction result is precision=0.0, recall=0.0 and F1=0
+2022-05-07 07:23:26,350 SoftMaskedBertModel INFO: Sentence Level: acc:0.000000, precision:0.000000, recall:0.000000, f1:0.000000
+2022-05-07 08:16:44,694 SoftMaskedBertModel INFO: Valid.
+2022-05-07 08:19:27,002 SoftMaskedBertModel INFO: loss: 0.04153639684538285
+2022-05-07 08:19:27,007 SoftMaskedBertModel INFO: Detection:
+acc: 0.3046
+2022-05-07 08:19:27,012 SoftMaskedBertModel INFO: Correction:
+acc: 0.7999
+2022-05-07 08:19:27,353 SoftMaskedBertModel INFO: The detection result is precision=0.9759049584472085, recall=0.8967761775408744 and F1=0.9346688034188033
+2022-05-07 08:19:27,402 SoftMaskedBertModel INFO: The correction result is precision=0.9392467280105161, recall=0.8965385559586482 and F1=0.9173958551392087
+2022-05-07 08:19:27,451 SoftMaskedBertModel INFO: Sentence Level: acc:0.799886, precision:0.999230, recall:0.798126, f1:0.887427
+2022-05-07 09:12:32,322 SoftMaskedBertModel INFO: Valid.
+2022-05-07 09:15:16,923 SoftMaskedBertModel INFO: loss: 0.03358212334416453
+2022-05-07 09:15:16,926 SoftMaskedBertModel INFO: Detection:
+acc: 0.4215
+2022-05-07 09:15:16,929 SoftMaskedBertModel INFO: Correction:
+acc: 0.8365
+2022-05-07 09:15:17,277 SoftMaskedBertModel INFO: The detection result is precision=0.9795170094282406, recall=0.9105376454307826 and F1=0.9437685932851679
+2022-05-07 09:15:17,323 SoftMaskedBertModel INFO: The correction result is precision=0.9586558216768456, recall=0.9179894892871581 and F1=0.937882041962663
+2022-05-07 09:15:17,371 SoftMaskedBertModel INFO: Sentence Level: acc:0.836498, precision:0.999524, recall:0.834955, f1:0.909858
+2022-05-07 10:08:37,962 SoftMaskedBertModel INFO: Valid.
+2022-05-07 10:11:25,189 SoftMaskedBertModel INFO: loss: 0.03155707759306627
+2022-05-07 10:11:25,192 SoftMaskedBertModel INFO: Detection:
+acc: 0.4682
+2022-05-07 10:11:25,195 SoftMaskedBertModel INFO: Correction:
+acc: 0.8483
+2022-05-07 10:11:25,563 SoftMaskedBertModel INFO: The detection result is precision=0.9763239875389408, recall=0.9236071959407514 and F1=0.9492342336410444
+2022-05-07 10:11:25,613 SoftMaskedBertModel INFO: The correction result is precision=0.9601564884437169, recall=0.9228 and F1=0.9411076814294068
+2022-05-07 10:11:25,664 SoftMaskedBertModel INFO: Sentence Level: acc:0.848261, precision:0.999573, recall:0.846822, f1:0.916879
+2022-05-07 11:04:56,040 SoftMaskedBertModel INFO: Valid.
+2022-05-07 11:07:41,391 SoftMaskedBertModel INFO: loss: 0.03178022165791802
+2022-05-07 11:07:41,395 SoftMaskedBertModel INFO: Detection:
+acc: 0.4955
+2022-05-07 11:07:41,399 SoftMaskedBertModel INFO: Correction:
+acc: 0.8516
+2022-05-07 11:07:41,747 SoftMaskedBertModel INFO: The detection result is precision=0.9760693015701137, recall=0.9239915944851622 and F1=0.9493167636449803
+2022-05-07 11:07:41,798 SoftMaskedBertModel INFO: The correction result is precision=0.9618926114932328, recall=0.9259150492564807 and F1=0.9435610028158284
+2022-05-07 11:07:41,849 SoftMaskedBertModel INFO: Sentence Level: acc:0.851586, precision:0.999575, recall:0.850186, f1:0.918848
+2022-05-07 12:00:31,295 SoftMaskedBertModel INFO: Valid.
+2022-05-07 12:03:12,807 SoftMaskedBertModel INFO: loss: 0.03165610528856158
+2022-05-07 12:03:12,811 SoftMaskedBertModel INFO: Detection:
+acc: 0.5373
+2022-05-07 12:03:12,815 SoftMaskedBertModel INFO: Correction:
+acc: 0.8539
+2022-05-07 12:03:13,152 SoftMaskedBertModel INFO: The detection result is precision=0.9758974358974359, recall=0.9265798780175286 and F1=0.950599432116942
+2022-05-07 12:03:13,199 SoftMaskedBertModel INFO: The correction result is precision=0.9615565450673452, recall=0.9252694610778444 and F1=0.9430640698746813
+2022-05-07 12:03:13,248 SoftMaskedBertModel INFO: Sentence Level: acc:0.853910, precision:0.999618, recall:0.852502, f1:0.920217
+2022-05-07 12:56:23,108 SoftMaskedBertModel INFO: Valid.
+2022-05-07 12:59:10,364 SoftMaskedBertModel INFO: loss: 0.030731944268379784
+2022-05-07 12:59:10,368 SoftMaskedBertModel INFO: Detection:
+acc: 0.5731
+2022-05-07 12:59:10,372 SoftMaskedBertModel INFO: Correction:
+acc: 0.8571
+2022-05-07 12:59:10,731 SoftMaskedBertModel INFO: The detection result is precision=0.9755742870223252, recall=0.9283481113218185 and F1=0.9513754842098353
+2022-05-07 12:59:10,783 SoftMaskedBertModel INFO: The correction result is precision=0.9633136421354828, recall=0.9280376565699545 and F1=0.9453466794890896
+2022-05-07 12:59:10,837 SoftMaskedBertModel INFO: Sentence Level: acc:0.857092, precision:0.999746, recall:0.855613, f1:0.922081
+2022-05-07 13:52:44,208 SoftMaskedBertModel INFO: Valid.
+2022-05-07 13:55:30,829 SoftMaskedBertModel INFO: loss: 0.030133499074333256
+2022-05-07 13:55:30,834 SoftMaskedBertModel INFO: Detection:
+acc: 0.6032
+2022-05-07 13:55:30,838 SoftMaskedBertModel INFO: Correction:
+acc: 0.8597
+2022-05-07 13:55:31,180 SoftMaskedBertModel INFO: The detection result is precision=0.9756156575975912, recall=0.929962585208344 and F1=0.9522422524862892
+2022-05-07 13:55:31,230 SoftMaskedBertModel INFO: The correction result is precision=0.9645347074871173, recall=0.9302857142857143 and F1=0.947100684579376
+2022-05-07 13:55:31,281 SoftMaskedBertModel INFO: Sentence Level: acc:0.859738, precision:0.999621, recall:0.858399, f1:0.923643
+2022-05-07 14:48:45,605 SoftMaskedBertModel INFO: Valid.
+2022-05-07 14:51:27,641 SoftMaskedBertModel INFO: loss: 0.030217972492014807
+2022-05-07 14:51:27,645 SoftMaskedBertModel INFO: Detection:
+acc: 0.6215
+2022-05-07 14:51:27,650 SoftMaskedBertModel INFO: Correction:
+acc: 0.8630
+2022-05-07 14:51:27,988 SoftMaskedBertModel INFO: The detection result is precision=0.976022983567823, recall=0.9315514325252422 and F1=0.953268822279915
+2022-05-07 14:51:28,037 SoftMaskedBertModel INFO: The correction result is precision=0.9648427828670463, recall=0.9314053537284895 and F1=0.9478292593943817
+2022-05-07 14:51:28,087 SoftMaskedBertModel INFO: Sentence Level: acc:0.862955, precision:0.999748, recall:0.861546, f1:0.925516
+2022-05-07 15:44:03,135 SoftMaskedBertModel INFO: Valid.
+2022-05-07 15:46:44,738 SoftMaskedBertModel INFO: loss: 0.030401765249202028
+2022-05-07 15:46:44,744 SoftMaskedBertModel INFO: Detection:
+acc: 0.6356
+2022-05-07 15:46:44,748 SoftMaskedBertModel INFO: Correction:
+acc: 0.8629
+2022-05-07 15:46:45,075 SoftMaskedBertModel INFO: The detection result is precision=0.9775807711999138, recall=0.9297063195120702 and F1=0.9530427015880105
+2022-05-07 15:46:45,121 SoftMaskedBertModel INFO: The correction result is precision=0.9656550621571708, recall=0.9319270057459034 and F1=0.9484912888684327
+2022-05-07 15:46:45,170 SoftMaskedBertModel INFO: Sentence Level: acc:0.862920, precision:0.999748, recall:0.861510, f1:0.925496
+2022-05-07 16:39:17,427 SoftMaskedBertModel INFO: Valid.
+2022-05-07 16:41:58,415 SoftMaskedBertModel INFO: loss: 0.030550150333214423
+2022-05-07 16:41:58,419 SoftMaskedBertModel INFO: Detection:
+acc: 0.6432
+2022-05-07 16:41:58,423 SoftMaskedBertModel INFO: Correction:
+acc: 0.8633
+2022-05-07 16:41:59,102 SoftMaskedBertModel INFO: The detection result is precision=0.9781295507254193, recall=0.929501306955051 and F1=0.9531956270366866
+2022-05-07 16:41:59,147 SoftMaskedBertModel INFO: The correction result is precision=0.9661437512061978, recall=0.9318955430273376 and F1=0.9487106598984771
+2022-05-07 16:41:59,198 SoftMaskedBertModel INFO: Sentence Level: acc:0.863349, precision:0.999706, recall:0.861980, f1:0.925749
+2022-05-07 16:42:16,348 SoftMaskedBertModel INFO: Testing...
+2022-05-07 16:42:21,329 SoftMaskedBertModel INFO: Test.
+2022-05-07 16:42:21,331 SoftMaskedBertModel INFO: loss: 0.04914033954180237
+2022-05-07 16:42:21,331 SoftMaskedBertModel INFO: Detection:
+acc: 0.5255
+2022-05-07 16:42:21,332 SoftMaskedBertModel INFO: Correction:
+acc: 0.8018
+2022-05-07 16:42:21,353 SoftMaskedBertModel INFO: The detection result is precision=0.8015665796344648, recall=0.8684582743988685 and F1=0.8336727766463001
+2022-05-07 16:42:21,354 SoftMaskedBertModel INFO: The correction result is precision=0.9543973941368078, recall=0.9001536098310292 and F1=0.9264822134387353
+2022-05-07 16:42:21,357 SoftMaskedBertModel INFO: Sentence Level: acc:0.801818, precision:0.837500, recall:0.741697, f1:0.786693
+2022-05-10 04:29:48,587 SoftMaskedBertModel INFO: Namespace(config_file='', opts=[])
+2022-05-10 04:29:48,589 SoftMaskedBertModel INFO: Loaded configuration file csc/train_SoftMaskedBert.yml
+2022-05-10 04:29:48,590 SoftMaskedBertModel INFO: 
+MODEL:
+  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda:0"
+  NAME: "SoftMaskedBertModel"
+  GPU_IDS: [0]
+  # [loss_coefficient]
+  HYPER_PARAMS: [0.8]
+
+DATASETS:
+  TRAIN: "datasets/csc/train.json"
+  VALID: "datasets/csc/dev.json"
+  TEST: "datasets/csc/test.json"
+
+SOLVER:
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 5e-8
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 4
+
+
+TEST:
+  BATCH_SIZE: 16
+
+TASK:
+  NAME: "csc"
+
+OUTPUT_DIR: "checkpoints/SoftMaskedBert"
+
+2022-05-10 04:29:48,590 SoftMaskedBertModel INFO: Running with config:
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  TEST: datasets/csc/test.json
+  TRAIN: datasets/csc/train.json
+  VALID: datasets/csc/dev.json
+INPUT:
+  MAX_LEN: 512
+MODE: ['train', 'test']
+MODEL:
+  BERT_CKPT: bert-base-chinese
+  DEVICE: cuda:0
+  GPU_IDS: [0]
+  HYPER_PARAMS: [0.8]
+  NAME: SoftMaskedBertModel
+  NUM_CLASSES: 10
+  WEIGHTS: 
+OUTPUT_DIR: checkpoints/SoftMaskedBert
+SOLVER:
+  ACCUMULATE_GRAD_BATCHES: 4
+  BASE_LR: 0.0001
+  BATCH_SIZE: 32
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 0
+  ETA_MIN_LR: 3e-07
+  GAMMA: 0.9999
+  INTERVAL: step
+  LOG_PERIOD: 100
+  MAX_EPOCHS: 10
+  MAX_ITER: 10
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: AdamW
+  SCHED: WarmupExponentialLR
+  STEPS: (10,)
+  WARMUP_EPOCHS: 1024
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 2
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 5e-08
+  WEIGHT_DECAY_BIAS: 0
+TASK:
+  NAME: csc
+TEST:
+  BATCH_SIZE: 16
+  CKPT_FN: 
+2022-05-10 04:30:04,739 SoftMaskedBertModel INFO: Valid.
+2022-05-10 04:30:05,726 SoftMaskedBertModel INFO: loss: 4.259933233261108
+2022-05-10 04:30:05,726 SoftMaskedBertModel INFO: Detection:
+acc: 0.0000
+2022-05-10 04:30:05,727 SoftMaskedBertModel INFO: Correction:
+acc: 0.0000
+2022-05-10 04:30:05,728 SoftMaskedBertModel INFO: The detection result is precision=0.02716914986853637, recall=0.8157894736842105 and F1=0.05258693808312129
+2022-05-10 04:30:05,729 SoftMaskedBertModel INFO: The correction result is precision=0.0, recall=0.0 and F1=0
+2022-05-10 04:30:05,729 SoftMaskedBertModel INFO: Sentence Level: acc:0.000000, precision:0.000000, recall:0.000000, f1:0.000000
+2022-05-10 04:30:11,944 SoftMaskedBertModel INFO: Testing...
