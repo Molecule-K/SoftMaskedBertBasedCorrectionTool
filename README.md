@@ -2,7 +2,7 @@
 
 基于SoftMasked-BERT的文本自动纠错应用
 
-## 数据准备
+## 数据准备（项目代码已包含数据集）
 1. 从 [http://nlp.ee.ncu.edu.tw/resource/csc.html](http://nlp.ee.ncu.edu.tw/resource/csc.html)下载SIGHAN数据集
 2. 解压上述数据集并将文件夹中所有 ''.sgml'' 文件复制至 datasets/csc/ 目录
 3. 复制 ''SIGHAN15_CSC_TestInput.txt'' 和 ''SIGHAN15_CSC_TestTruth.txt'' 至 datasets/csc/ 目录
@@ -44,7 +44,7 @@
 祝您使用愉快，希望有帮到您。
 ```
 
-在模式1下，如果您完成了数据准备，那么模型会自动开始进行训练。这一过程耗时较长，请耐心等待。
+在模式1下，如果您完成了数据准备，那么模型会自动开始进行训练。这一过程耗时较长，请耐心等待。（***项目代码中已为您提供了一个训练好的模型，您也可以直接选择模式2开始纠错***）
 训练结束后您可以在checkpoints/SoftMaskedBert/下找到您训练的模型。
 另外，配置文件的参数可以在configs/csc下找到，如有其他需求，可根据需要自行调整配置文件中的参数。
 
@@ -59,3 +59,12 @@
 与此同时，如果您只需要实时输入文本进行纠错，也请按照引导进行选择。注意，这种情况下纠错的语句会被直接输出到终端的屏幕上，并不会保存到文件中。
 
 在模式3下，提供了一种将模型权重导出的方式，导出的权重可以被pycorrector或者transformer引用，它将被存放在checkpoints/SoftMaskedBert下。
+
+
+## References
+1. [Spelling Error Correction with Soft-Masked BERT](https://arxiv.org/abs/2005.07421)
+2. [http://ir.itc.ntnu.edu.tw/lre/sighan8csc.html](http://ir.itc.ntnu.edu.tw/lre/sighan8csc.html)
+3. [https://github.com/wdimmy/Automatic-Corpus-Generation](https://github.com/wdimmy/Automatic-Corpus-Generation)
+4. [https://github.com/sunnyqiny/Confusionset-guided-Pointer-Networks-for-Chinese-Spelling-Check](https://github.com/sunnyqiny/Confusionset-guided-Pointer-Networks-for-Chinese-Spelling-Check)
+5. [SoftMaskedBert-PyTorch](https://github.com/gitabtion/SoftMaskedBert-PyTorch)
+6. [https://github.com/shibing624/pycorrector](https://github.com/shibing624/pycorrector)
