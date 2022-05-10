@@ -2,7 +2,7 @@
 
 基于SoftMasked-BERT的文本自动纠错应用
 
-## 数据准备（项目代码已包含数据集）
+## 数据准备
 1. 从 [http://nlp.ee.ncu.edu.tw/resource/csc.html](http://nlp.ee.ncu.edu.tw/resource/csc.html)下载SIGHAN数据集
 2. 解压上述数据集并将文件夹中所有 ''.sgml'' 文件复制至 datasets/csc/ 目录
 3. 复制 ''SIGHAN15_CSC_TestInput.txt'' 和 ''SIGHAN15_CSC_TestTruth.txt'' 至 datasets/csc/ 目录
@@ -44,7 +44,7 @@
 祝您使用愉快，希望有帮到您。
 ```
 
-在模式1下，如果您完成了数据准备，那么模型会自动开始进行训练。这一过程耗时较长，请耐心等待。（***项目代码中已为您提供了一个训练好的模型，您也可以直接选择模式2开始纠错***）
+在模式1下，如果您完成了数据准备，那么模型会自动开始进行训练。这一过程耗时较长，请耐心等待。
 训练结束后您可以在checkpoints/SoftMaskedBert/下找到您训练的模型。
 另外，配置文件的参数可以在configs/csc下找到，如有其他需求，可根据需要自行调整配置文件中的参数。
 
