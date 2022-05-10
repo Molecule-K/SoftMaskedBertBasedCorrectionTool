@@ -68,3 +68,4 @@
 4. [https://github.com/sunnyqiny/Confusionset-guided-Pointer-Networks-for-Chinese-Spelling-Check](https://github.com/sunnyqiny/Confusionset-guided-Pointer-Networks-for-Chinese-Spelling-Check)
 5. [SoftMaskedBert-PyTorch](https://github.com/gitabtion/SoftMaskedBert-PyTorch)
 6. [https://github.com/shibing624/pycorrector](https://github.com/shibing624/pycorrector)
+7. [https://github.com/lonePatient/TorchBlocks](https://github.com/lonePatient/TorchBlocks)
