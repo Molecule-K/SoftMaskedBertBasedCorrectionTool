@@ -2,10 +2,6 @@ import torch
 import torch.nn as nn
 
 class FocalLoss(nn.Module):
-    """
-    Softmax and sigmoid focal loss.
-    copy from https://github.com/lonePatient/TorchBlocks
-    """
     def __init__(self,
                  num_labels,
                  activation_type='softmax',
@@ -21,13 +17,6 @@ class FocalLoss(nn.Module):
         self.activation_type = activation_type
 
     def forward(self, input, target):
-        """
-        Args:
-            logits: model's output, shape of [batch_size, num_cls]
-            target: ground truth labels, shape of [batch_size]
-        Returns:
-            shape of [batch_size]
-        """
         if self.activation_type == 'softmax':
             idx = target.view(-1, 1).long()
             one_hot_key = torch.zeros(idx.size(0),
